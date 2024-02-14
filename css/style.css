@@ -8,6 +8,8 @@ body {
   overflow-x: hidden;
 }
 
+
+
 .layout_padding {
   padding: 90px 0;
 }
@@ -964,3 +966,69 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+.instagram-carousel {
+  position: relative;
+  max-width: 600px;
+  /* Adjust as needed for your design */
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  /* Remove default img inline properties */
+}
+
+/* Buttons on the sides for navigation */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  /* Adjust as needed for the arrow to be in the middle */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 3px 3px 0;
+  /* Rounded corners for the left side */
+  z-index: 1000;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  /* Rounded corners for the right side */
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Darken background on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+
+  .prev,
+  .next,
+  .carousel-slide img {
+    width: 100px;
+    padding: 10px;
+    margin-top: -50px;
+    /* Adjust as needed for the arrow to be in the middle */
+  }
+}
