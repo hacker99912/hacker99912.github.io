@@ -969,8 +969,7 @@ a:focus {
 
 .instagram-carousel {
   position: relative;
-  max-width: 600px;
-  /* Adjust as needed for your design */
+  max-width: 600px; /* Adjust as needed for your design */
   margin: auto;
   overflow: hidden;
 }
@@ -983,52 +982,128 @@ a:focus {
 
 .carousel-slide img {
   width: 100%;
-  display: block;
-  /* Remove default img inline properties */
+  display: block; /* Remove default img inline properties */
 }
 
 /* Buttons on the sides for navigation */
-.prev,
-.next {
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: -50px;
-  /* Adjust as needed for the arrow to be in the middle */
+  margin-top: -50px; /* Adjust as needed for the arrow to be in the middle */
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   user-select: none;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0 3px 3px 0;
-  /* Rounded corners for the left side */
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0 3px 3px 0; /* Rounded corners for the left side */
   z-index: 1000;
 }
 
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
-  /* Rounded corners for the right side */
+  border-radius: 3px 0 0 3px; /* Rounded corners for the right side */
 }
 
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  /* Darken background on hover */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Darken background on hover */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-
-  .prev,
-  .next,
-  .carousel-slide img {
+  .prev, .next, .carousel-slide img {
     width: 100px;
     padding: 10px;
-    margin-top: -50px;
-    /* Adjust as needed for the arrow to be in the middle */
+    margin-top: -50px; /* Adjust as needed for the arrow to be in the middle */
   }
 }
+/* Base styles */
+.instagram-carousel {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  /* Use flex to center the image in the slide */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  display: none;
+  /* Hide all slides by default */
+  transition: transform 0.5s ease;
+  /* Smooth transition for sliding effect */
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 80vh;
+  /* Adjust the height so the image fits in the viewport */
+  object-fit: contain;
+  /* To keep aspect ratio without cropping */
+}
+
+/* Show the first slide by default */
+.carousel-slide:first-child {
+  display: block;
+}
+
+/* Controls */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  user-select: none;
+  z-index: 2;
+  /* Ensure arrows are above the image */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+/**/
+@media only screen and (max-width: 600px) {
+  .heading_container h2 {
+    font-size: 24px;
+  }
+
+  .prev,
+  .next {
+    font-size: 14px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Optional: You may also want to increase the size of the controls' touch area for easier interaction on touch devices */
+  .prev,
+  .next {
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+    /* Make controls slightly transparent */
+  }
+
+  .prev:hover,
+  .next:hover {
+    opacity: 1;
+  }
+} 
